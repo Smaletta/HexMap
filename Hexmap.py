@@ -9,6 +9,15 @@ import os
 currentmap = r"Libradaern1.jpg"
 currentmap = os.path.abspath(currentmap)
 
+""" To Do List:
+        -Split Controls from Hex Map Image area
+        -Add Line edits and buttons for Map Resizing and Grid Resizing
+        -Add function for Map resizing
+        -Add function for Grid resizing
+        -Add funciton for changing grid style
+        -Add Export function
+        -Change Open to Import
+        """
 class HexMap(QMainWindow):
 
     def __init__(self):
@@ -37,8 +46,8 @@ class HexMap(QMainWindow):
 
         menubar = self.menuBar()
         fileMenu = menubar.addMenu('&File')
-        fileMenu.addAction(exitAct)
         fileMenu.addAction(openAct)
+        fileMenu.addAction(exitAct)
 
         self.lbl = QLabel(MainWindow)
         self.lbl.setPixmap(self.pixmap)
@@ -55,7 +64,7 @@ class HexMap(QMainWindow):
         control_size.addWidget(self.draw)
         control_size.addWidget(hex_size)
 
-        #self.hbox.addWidget(self.draw)
+        self.hbox.addWidget(self.draw)
         self.hbox.addWidget(self.lbl)
         self.hbox.addWidget(hex_control)
         self.setLayout(self.hbox)
