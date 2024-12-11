@@ -8,6 +8,7 @@ import os
 
 currentmap = r"Libradaern1.jpg"
 currentmap = os.path.abspath(currentmap)
+print ("3")
 
 """ To Do List:
         -Split Controls from Hex Map Image area
@@ -89,8 +90,6 @@ class HexDrawing(QWidget):
         super().__init__()
         self.resize(100,100)
         self.qp = QPainter(self)
-        #self.stretch
-        #self.show()
 
     def paintEvent(self, e):
         self.qp.begin(self)
@@ -101,7 +100,6 @@ class HexDrawing(QWidget):
         pen = QPen(Qt.red, 6, Qt.SolidLine)
 
         self.qp.setPen(pen)
-        #qp.drawLine(300, 240, 400, 240)
         self.qp.drawLine(20, 40, 250, 40)
 
 
